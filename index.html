@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>StreamX | আজকের সব নতুন বাংলা নাটকের এপিসোড এইচডি</title>
+    <meta name="description" content="StreamX - এ দেখুন প্রতিদিনের সব জনপ্রিয় বাংলা নাটকের লেটেস্ট এপিসোড এবং নতুন মুভি। আজকের নতুন সব পর্ব সরাসরি এইচডি কোয়ালিটিতে দেখুন।">
+    <meta name="keywords" content="Bangla Natok, আজকের নাটক, New Natok 2026, Bangla Serial Today Episode, নতুন নাটক, StreamX Bangla">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://your-github-username.github.io/your-repo-name/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="StreamX - আজকের সব নতুন বাংলা নাটকের এপিসোড">
+    <meta property="og:description" content="সব প্রিয় বাংলা নাটকের লেটেস্ট আপডেট পান সবার আগে।">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --bg-color: #0f0f0f;
+            --card-bg: #2a2a2a;
+            --text-color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'SolaimanLipi', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Navbar - কাঠামো অপরিবর্তিত */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(0,0,0,0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 5px; color: white; font-weight: 700; }
+        .hero p { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; }
+
+        .explore-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        /* Movie Grid */
+        .container { padding: 30px 4%; }
+        .section-title {
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .movie-card:hover { transform: translateY(-5px); }
+
+        .poster-wrapper { width: 100%; height: 220px; background: #111; }
+        .movie-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        .card-info { padding: 12px 10px; text-align: left; }
+        .movie-title { 
+            font-size: 13px; 
+            font-weight: 500; 
+            color: #fff; 
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #111;
+            padding: 25px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+
+        .footer-text {
+            color: #888;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-text span {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Video Popup */
+        #videoPopup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-box { width: 95%; max-width: 850px; background: #000; border-radius: 10px; overflow: hidden; }
+
+        .loader {
+            border: 3px solid #333;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">STREAMX</div>
+        <div class="hidden md:flex gap-5 text-xs font-semibold text-gray-300">
+            <span>Home</span> | <span>Movies</span> | <span>TV Shows</span> | <span>My List</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Unlimited Entertainment</h1>
+        <p>Watch the latest movies and series in 4K quality.</p>
+        <button class="explore-btn">Explore Now</button>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Bangla Natok Today - আজকের নতুন সব নাটক</h1>
+        
+        <div id="loading" class="text-center py-10">
+            <div class="loader"></div>
+            <p class="text-xs text-gray-500 italic">নতুন এপিসোড খোঁজা হচ্ছে...</p>
+        </div>
+
+        <div id="movie-container" class="movie-grid">
+            </div>
+    </main>
+
+    <div id="videoPopup" onclick="closePopup()">
+        <div class="popup-box" onclick="event.stopPropagation()">
+            <div class="aspect-video bg-black">
+                <iframe id="mainPlayer" title="StreamX Player" src="" allow="autoplay; fullscreen" allowfullscreen class="w-full h-full border-none"></iframe>
+            </div>
+            <div class="p-3 flex justify-between items-center bg-[#111]">
+                <span id="popupTitle" class="text-gray-300 text-sm font-bold truncate pr-4"></span>
+                <button onclick="closePopup()" class="bg-red-600 text-white px-5 py-1.5 rounded font-bold text-xs uppercase">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-text">
+            &copy; 2026 <span>StreamX</span>. All Rights Reserved. <br>
+            Created By <span>RAFID AHAMMED</span>
+        </div>
+    </footer>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZNilyN_kfcwwfGoe6qh_WCmYMkI45Iz1fmwqbLUc5FNnFDJ0IrqyI3pysRZ-_O21OOg/exec";
+
+        async function loadMovies() {
+            try {
+                const response = await fetch(SCRIPT_URL);
+                const movies = await response.json();
+                
+                document.getElementById('loading').style.display = 'none';
+                const container = document.getElementById('movie-container');
+
+                if (movies.length === 0) {
+                    container.innerHTML = '<p class="text-gray-500 text-center col-span-full">আজকের কোনো নাটক পাওয়া যায়নি।</p>';
+                    return;
+                }
+
+                movies.forEach(item => {
+                    const card = document.createElement('article'); // SEO: Changed to article
+                    card.className = 'movie-card';
+                    
+                    const poster = `https://drive.google.com/thumbnail?id=${item.id}&sz=w400`;
+
+                    card.onclick = () => openPopup(item.id, item.name);
+                    card.innerHTML = `
+                        <div class="poster-wrapper">
+                            <img src="${poster}" onerror="this.src='https://via.placeholder.com/200x300?text=No+Image'" alt="${item.name}">
+                        </div>
+                        <div class="card-info">
+                            <h2 class="movie-title">${item.name}</h2>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Fetch error:", error);
+                document.getElementById('loading').innerHTML = `<p class="text-red-500 text-xs">লোড হতে সমস্যা হয়েছে।</p>`;
+            }
+        }
+
+        function openPopup(id, name) {
+            document.getElementById('mainPlayer').src = `https://drive.google.com/file/d/${id}/preview?autoplay=1`;
+            document.getElementById('popupTitle').innerText = name;
+            document.getElementById('videoPopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            document.getElementById('mainPlayer').src = "";
+            document.getElementById('videoPopup').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onload = loadMovies;
+    </script>
+</body>
+</html>
