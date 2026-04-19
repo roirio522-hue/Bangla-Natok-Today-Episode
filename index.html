@@ -198,9 +198,14 @@
             <div class="aspect-video bg-black">
                 <iframe id="mainPlayer" title="StreamX Player" src="" allow="autoplay; fullscreen" allowfullscreen class="w-full h-full border-none"></iframe>
             </div>
-            <div class="p-3 flex justify-between items-center bg-[#111]">
-                <span id="popupTitle" class="text-gray-300 text-sm font-bold truncate pr-4"></span>
-                <button onclick="closePopup()" class="bg-red-600 text-white px-5 py-1.5 rounded font-bold text-xs uppercase">Close</button>
+            <div class="p-3 bg-[#111]">
+                <div class="flex justify-between items-center">
+                    <span id="popupTitle" class="text-gray-300 text-sm font-bold truncate pr-4"></span>
+                    <button onclick="closePopup()" class="bg-red-600 text-white px-5 py-1.5 rounded font-bold text-xs uppercase">Close</button>
+                </div>
+                <p style="color: #ffcc00; font-size: 11px; margin-top: 8px; font-style: italic;">
+                    <i class="fa-solid fa-circle-exclamation"></i> ভিডিও দেখা না গেলে, উপরের ডানদিকের তীর চিহ্ন (External Icon) এ চাপ দিন।
+                </p>
             </div>
         </div>
     </div>
