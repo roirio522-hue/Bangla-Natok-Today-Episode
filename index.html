@@ -135,7 +135,7 @@
             padding: 25px 0;
             text-align: center;
             border-top: 1px solid #333;
-            margin-top: 50px;
+            margin-top: 0px; /* Adjusted as counter is above it */
         }
 
         .footer-text {
@@ -149,7 +149,7 @@
             font-weight: bold;
         }
 
-        /* Video Popup - Updated to match Video Store style */
+        /* Video Popup */
         #videoPopup {
             display: none;
             position: fixed;
@@ -229,6 +229,12 @@
         </div>
     </div>
 
+    <div style="background-color: #0f0f0f; padding: 25px 0; text-align: center; border-top: 1px solid #333; margin-top: 50px;">
+        <a href="https://info.flagcounter.com/PYtP">
+            <img src="https://s01.flagcounter.com/count2/PYtP/bg_0F0F0F/txt_FFFFFF/border_333333/columns_2/maxflags_10/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
+        </a>
+    </div>
+
     <footer>
         <div class="footer-text">
             &copy; 2026 <span>StreamX</span>. All Rights Reserved. <br>
@@ -275,7 +281,6 @@
         }
 
         function openPopup(id, name) {
-            // Using the professional preview player from Drive
             document.getElementById('mainPlayer').src = `https://drive.google.com/file/d/${id}/preview`;
             document.getElementById('popupTitle').innerText = name;
             document.getElementById('videoPopup').style.display = 'flex';
