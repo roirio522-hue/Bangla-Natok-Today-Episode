@@ -11,16 +11,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>StreamX | আজকের সব নতুন বাংলা নাটকের এপিসোড এইচডি</title>
-    <meta name="description" content="StreamX - এ দেখুন প্রতিদিনের সব জনপ্রিয় বাংলা নাটকের লেটেস্ট এপিসোড এবং নতুন মুভি। আজকের নতুন সব পর্ব সরাসরি এইচডি কোয়ালিটিতে দেখুন।">
-    <meta name="keywords" content="Bangla Natok, আজকের নাটক, New Natok 2026, Bangla Serial Today Episode, নতুন নাটক, StreamX Bangla">
+    <title>StreamX | আজকের সব নতুন বাংলা নাটকের লেটেস্ট এপিসোড HD</title>
+    <meta name="title" content="StreamX | আজকের সব নতুন বাংলা নাটকের লেটেস্ট এপিসোড HD">
+    <meta name="description" content="StreamX এ দেখুন প্রতিদিনের সব জনপ্রিয় বাংলা নাটকের লেটেস্ট এপিসোড এবং নতুন মুভি। সবার আগে আজকের নতুন সব পর্ব সরাসরি এইচডি কোয়ালিটিতে দেখুন।">
+    <meta name="keywords" content="Bangla Natok, আজকের নাটক, New Natok 2026, Bangla Serial Today Episode, নতুন নাটক, StreamX Bangla, নাটক ডাউনলোড, লেটেস্ট বাংলা নাটক, Zee Bangla, Star Jalsha, Today Episode">
+    <meta name="author" content="Rafid Ahammed">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e50914">
     <link rel="canonical" href="https://your-github-username.github.io/your-repo-name/">
     
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-github-username.github.io/your-repo-name/">
     <meta property="og:title" content="StreamX - আজকের সব নতুন বাংলা নাটকের এপিসোড">
-    <meta property="og:description" content="সব প্রিয় বাংলা নাটকের লেটেস্ট আপডেট পান সবার আগে।">
+    <meta property="og:description" content="সব প্রিয় বাংলা নাটকের লেটেস্ট আপডেট পান সবার আগে। সরাসরি HD কোয়ালিটিতে দেখুন।">
     <meta property="og:image" content="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="StreamX - আজকের নতুন সব নাটক">
+    <meta property="twitter:description" content="লেটেস্ট বাংলা নাটকের সব এপিসোড পান এক জায়গায়।">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -264,7 +273,6 @@
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZNilyN_kfcwwfGoe6qh_WCmYMkI45Iz1fmwqbLUc5FNnFDJ0IrqyI3pysRZ-_O21OOg/exec";
 
-        // Subscribe লজিক
         let count = localStorage.getItem('sub_count') || 0;
         document.getElementById('subCount').innerText = count;
         if(localStorage.getItem('isSubscribed')) {
@@ -291,7 +299,6 @@
                 const response = await fetch(SCRIPT_URL);
                 const movies = await response.json();
                 
-                // কন্টেন্ট লোড হলে স্কেলিটন সরিয়ে মেইন কন্টেইনার দেখানো
                 document.getElementById('skeleton-container').style.display = 'none';
                 const container = document.getElementById('movie-container');
                 container.style.display = 'grid';
