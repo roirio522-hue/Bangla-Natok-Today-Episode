@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -135,7 +136,7 @@
             padding: 25px 0;
             text-align: center;
             border-top: 1px solid #333;
-            margin-top: 0px; /* Adjusted as counter is above it */
+            margin-top: 0px; 
         }
 
         .footer-text {
@@ -230,6 +231,16 @@
     </div>
 
     <div style="background-color: #0f0f0f; padding: 25px 0; text-align: center; border-top: 1px solid #333; margin-top: 50px;">
+        <div style="background: #1a1c22; display: inline-block; padding: 15px 40px; border-radius: 12px; border: 1px solid #333;">
+            <p style="color: #ccc; font-size: 13px; margin-bottom: 10px;">নতুন নাটকের আপডেট পেতে সাবস্ক্রাইব করুন</p>
+            <button id="subBtn" onclick="handleSubscribe()" style="background-color: #e50914; color: white; border: none; padding: 10px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px; margin: 0 auto;">
+                <i class="fa-solid fa-bell"></i> SUBSCRIBE
+            </button>
+            <p style="color: #888; font-size: 11px; margin-top: 10px;">মোট সাবস্ক্রাইবার: <span id="subCount" style="color: #e50914; font-weight: bold;">০</span></p>
+        </div>
+    </div>
+
+    <div style="background-color: #0f0f0f; padding: 25px 0; text-align: center; border-top: 1px solid #333; margin-top: 20px;">
         <a href="https://info.flagcounter.com/PYtP">
             <img src="https://s01.flagcounter.com/count2/PYtP/bg_0F0F0F/txt_FFFFFF/border_333333/columns_2/maxflags_10/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
         </a>
@@ -244,6 +255,30 @@
 
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZNilyN_kfcwwfGoe6qh_WCmYMkI45Iz1fmwqbLUc5FNnFDJ0IrqyI3pysRZ-_O21OOg/exec";
+
+        // Subscribe সিস্টেম লজিক
+        let count = localStorage.getItem('sub_count') || 0;
+        document.getElementById('subCount').innerText = count;
+        if(localStorage.getItem('isSubscribed')) {
+            const btn = document.getElementById('subBtn');
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> SUBSCRIBED';
+            btn.style.backgroundColor = '#333';
+            btn.disabled = true;
+        }
+
+        function handleSubscribe() {
+            if (!localStorage.getItem('isSubscribed')) {
+                count = parseInt(count) + 1;
+                localStorage.setItem('sub_count', count);
+                localStorage.setItem('isSubscribed', true);
+                document.getElementById('subCount').innerText = count;
+                const btn = document.getElementById('subBtn');
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> SUBSCRIBED';
+                btn.style.backgroundColor = '#333';
+                btn.disabled = true;
+                alert("সাবস্ক্রাইব করার জন্য ধন্যবাদ!");
+            }
+        }
 
         async function loadMovies() {
             try {
