@@ -219,7 +219,7 @@
             <button id="subBtn" onclick="handleSubscribe()" style="background-color: #e50914; color: white; border: none; padding: 10px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px; margin: 0 auto;">
                 <i class="fa-solid fa-bell"></i> SUBSCRIBE
             </button>
-            <p style="color: #888; font-size: 11px; margin-top: 10px;">মোট সাবস্ক্রাইবার: <span id="subCount" style="color: #e50914; font-weight: bold;">০</span></p>
+            <p style="color: #888; font-size: 11px; margin-top: 10px;">মোট সাবস্ক্রাইবার: <span id="subCount" style="color: #e50914; font-weight: bold;">2,000</span></p>
         </div>
     </div>
 
@@ -257,8 +257,10 @@
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZNilyN_kfcwwfGoe6qh_WCmYMkI45Iz1fmwqbLUc5FNnFDJ0IrqyI3pysRZ-_O21OOg/exec";
 
-        let count = localStorage.getItem('sub_count') || 0;
+        // ডিফল্ট সংখ্যা ২,০০০ সেট করা হলো
+        let count = localStorage.getItem('sub_count') || 2000;
         document.getElementById('subCount').innerText = count;
+        
         if(localStorage.getItem('isSubscribed')) {
             const btn = document.getElementById('subBtn');
             btn.innerHTML = '<i class="fa-solid fa-check"></i> SUBSCRIBED';
